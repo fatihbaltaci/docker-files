@@ -9,9 +9,9 @@
 
 ### Build Ubuntu 18.10 Dockerfile
 
-`cd ubuntu_18.10`
+`$ cd ubuntu_18.10`
 
-`docker build -t ubuntu:18.10-full .`
+`$ docker build -t ubuntu:18.10-full .`
 
 # Python 3.6
 
@@ -20,6 +20,6 @@
 
 ### Build Python 3.6 Dockerfile
 
-`cd python_3.6`
+`$ cd python_3.6`
 
-`docker build -t python:3.6.10-full .
+`$ docker build -t python:3.6.10-full .
