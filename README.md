@@ -22,4 +22,4 @@
 
 `$ cd python_3.6`
 
-`$ docker build -t python:3.6.10-full .
+`$ docker build -t python:3.6.10-full . `
