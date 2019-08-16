@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker tag fatihbaltaci/jupyter:pytorch_1.0 fatihbaltaci/jupyter:latest
+docker push fatihbaltaci/jupyter:latest
