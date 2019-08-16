@@ -30,3 +30,13 @@
 `$ cd jupyter_pytorch`
 
 `$ docker build -t jupyter:pytorch_1.0 .`
+
+
+### Run as a Service
+
+```
+$ JUPYTER_FILES=/home/fatih/jupyter_files
+$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always fatihbaltaci/jupyter:pytorch_1.0
+```
+
+**Default Passwork:** Jupyter
