@@ -23,3 +23,10 @@
 `$ cd python_3.6`
 
 `$ docker build -t python:3.6.10-full . `
+
+
+# Jupyter Notebook
+
+`$ cd jupyter_pytorch`
+
+`$ docker build -t jupyter:pytorch_1.0 .`
