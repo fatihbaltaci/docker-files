@@ -27,3 +27,5 @@ ENV LANG=C.UTF-8
 RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
 
 WORKDIR /workspace
+
+CMD [ "jupyter", "notebook" ]
