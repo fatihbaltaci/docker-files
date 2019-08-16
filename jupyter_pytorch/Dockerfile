@@ -13,7 +13,8 @@ RUN pip --no-cache-dir install \
 	Pillow==5.3.0 \
 	Cython==0.29.9 \
 	wget==3.2 \
-	future==0.17.1
+	future==0.17.1 \
+	jupyterlab==1.0.5
 
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
