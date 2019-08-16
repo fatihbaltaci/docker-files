@@ -35,8 +35,8 @@
 ### Run as a Service
 
 ```
-$ JUPYTER_FILES=/home/fatih/jupyter_files
-$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always fatihbaltaci/jupyter:pytorch_1.0
+$ JUPYTER_FILES=/home/cluster/jupyter_files
+$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --name=jupyter_notebook fatihbaltaci/jupyter:pytorch_1.0
 ```
 
 **Default Passwork:** Jupyter
