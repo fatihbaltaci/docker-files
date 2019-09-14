@@ -4,6 +4,6 @@ MAINTAINER Fatih Baltacı "baltacifatih14@gmail.com"
 
 RUN apt-get update && apt-get install -y git
 
-RUN python3 -m pip install --user --upgrade setuptools wheel
+RUN python3 -m pip install --user --upgrade setuptools wheel twine
 
 WORKDIR /workspace
