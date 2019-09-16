@@ -82,3 +82,5 @@ RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
 WORKDIR /workspace
 
 RUN chmod -R a+w .
+
+CMD [ "jupyter", "lab" ]
