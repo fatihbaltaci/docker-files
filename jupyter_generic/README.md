@@ -1,8 +1,9 @@
 ### Run as a Service
 
+- Specify working directory (JUPYTER_FILES) for jupyter lab. 
 ```
 $ JUPYTER_FILES=/home/cluster/jupyter_files
-$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --name=jupyter_lab fatihbaltaci/jupyter:pytorch_1.0
+$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --name=jupyter_lab fatihbaltaci/jupyter_generic:latest
 ```
 
 **Default Password:** Jupyter
