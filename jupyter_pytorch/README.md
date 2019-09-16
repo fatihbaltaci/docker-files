@@ -2,7 +2,7 @@
 
 ```
 $ JUPYTER_FILES=/home/cluster/jupyter_files
-$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --name=jupyter_notebook fatihbaltaci/jupyter:pytorch_1.0
+$ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --name=jupyter_lab fatihbaltaci/jupyter:pytorch_1.0
 ```
 
 **Default Password:** Jupyter

@@ -28,4 +28,4 @@ RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
 
 WORKDIR /workspace
 
-CMD [ "jupyter", "notebook" ]
+CMD [ "jupyter", "lab" ]
