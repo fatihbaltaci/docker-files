@@ -11,4 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file jupyter_generic/Dockerfile --tag jupyter_generic:$(date +%s)
+      run: docker build . --file jupyter_generic/Dockerfile --tag jupyter_generic:latest
+    - name: Docker Login
+      run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+    - name: Docker Push
+      run: docker push jupyter_generic:latest
