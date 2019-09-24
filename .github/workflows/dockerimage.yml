@@ -11,6 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
+      working-directory: ./jupyter_generic
       run: docker build . --file Dockerfile --tag jupyter_generic:latest
     - name: Docker Login
       run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
