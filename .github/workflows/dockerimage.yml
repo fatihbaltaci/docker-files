@@ -1,6 +1,9 @@
 name: Docker Image CI
 
-on: [push]
+on: 
+  push:
+    paths:
+    - 'jupyter_generic/*'
 
 jobs:
 
@@ -9,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
+      working-directory: ./jupyter_generic
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file jupyter_generic/Dockerfile --tag jupyter_generic:latest
