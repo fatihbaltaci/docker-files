@@ -8,7 +8,7 @@ $ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --n
 
 **Default Password:** Jupyter
 
-### Kernels
+### Kernel
 
 - Kernel 1: pytorch=0.4.1 torchvision=0.2.1 cuda90
 - Kernel 2: pytorch=1.1.0 torchvision=0.3.0 cuda10
