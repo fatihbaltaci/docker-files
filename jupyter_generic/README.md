@@ -29,3 +29,4 @@ $ docker run -dit -p 8888:8888 -v $JUPYTER_FILES:/workspace --restart=always --n
 	future==0.17.1 
 	jupyterlab==1.0.5
 ```
+
