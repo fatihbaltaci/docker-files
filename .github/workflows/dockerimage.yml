@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-      working-directory: ./jupyter_generic
+      working-directory: /jupyter_generic
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jupyter_generic:latest
