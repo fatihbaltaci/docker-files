@@ -14,4 +14,4 @@ jobs:
       working-directory: ./jupyter_generic
       run: docker build . --file Dockerfile --tag jupyter_generic:latest
     - name: Docker Push
-      run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} && docker push jupyter_generic:latest
+      run: docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} && docker push jupyter_generic:latest
