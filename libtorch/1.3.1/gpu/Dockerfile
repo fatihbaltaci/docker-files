@@ -1,8 +1,8 @@
-FROM ubuntu:18.04
+FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu16.04
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
-RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake
+RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake gdb gdbserver
 
 RUN cd /opt &&  \
     wget -O libtorch_1.3.1.zip https://download.pytorch.org/libtorch/cu101/libtorch-cxx11-abi-shared-with-deps-1.3.1.zip && \
