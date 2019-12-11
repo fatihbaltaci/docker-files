@@ -19,7 +19,7 @@ def run_command(command):
     try:
         process = subprocess.run(
             command, shell=True, capture_output=True, check=True)
-        return process
+        return process.stdout.decode("utf-8")
     except subprocess.CalledProcessError as error:
         print("Exception Occured: " + str(error))
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     DOCKERHUB_USERNAME = "fatihbaltaci"
 
     process_git = run_command(COMMAND_CHANGED_DOCKERFILES)
-    output = process_git.stdout.decode("utf-8").splitlines()
+    output = process_git.splitlines()
 
     for file_path in output:
         if not "Dockerfile" in file_path:
@@ -44,6 +44,5 @@ if __name__ == "__main__":
         COMMAND_BUILD_DOCKER_FILE = "cd " + dockerfile_dir + " && docker build . --tag " + \
             image_tag
         print(COMMAND_BUILD_DOCKER_FILE)
-        process_build = run_command(COMMAND_BUILD_DOCKER_FILE)
-        output = process_build.stdout.decode("utf-8")
+        output = run_command(COMMAND_BUILD_DOCKER_FILE)
         print(output)
