@@ -2,7 +2,7 @@ FROM pytorch/pytorch:1.3-cuda10.1-cudnn7-runtime
 
 MAINTAINER Fatih Baltacı "baltacifatih14@gmail.com"
 
-RUN apt-get update && apt-get install -y wget vim unzip libgtk2.0-dev swig
+RUN apt-get update && apt-get install -y wget vim unzip libgtk2.0-dev swig && rm -rf /var/lib/apt/lists/*
 
 RUN pip --no-cache-dir install \
 	opencv-contrib-python==4.1.0.25 \
