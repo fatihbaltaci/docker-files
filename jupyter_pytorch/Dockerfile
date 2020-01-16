@@ -14,7 +14,8 @@ RUN pip --no-cache-dir install \
         Cython==0.29.9 \
         wget==3.2 \
         future==0.17.1 \
-        jupyterlab==1.2.4
+        jupyterlab==1.2.4 \
+        ipywidgets
 
 
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
