@@ -8,8 +8,17 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
-        with:
-          python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-      - run: ls && python --version && python docker_build_push.py
+      - name: get changed files
+        id: getfile
+        run: |
+          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs)"
+
+      - name: echo output
+        run: |
+          echo ${{ steps.getfile.outputs.files }}
+          
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-python@v1
+#         with:
+#           python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+#       - run: ls && python --version && python docker_build_push.py
