@@ -24,5 +24,5 @@ jobs:
       - name: Checkout submodules
         shell: bash
         run: |
-           changed_files="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
-           echo "$changed_files"
+          changed_files="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
+          echo "$changed_files"
