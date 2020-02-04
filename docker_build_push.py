@@ -30,6 +30,8 @@ def docker_build(command):
 
 
 if __name__ == "__main__":
+    
+    print("Code Starting")
 
     COMMAND_CHANGED_DOCKERFILES = "git diff-tree --no-commit-id --name-only -r 5b1705b68444794feb7cf41d531c85b5a6c5e027"
     DOCKERHUB_USERNAME = "fatihbaltaci"
