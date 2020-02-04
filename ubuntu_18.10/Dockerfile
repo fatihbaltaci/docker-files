@@ -1,6 +1,6 @@
 FROM ubuntu:18.10
 
-MAINTAINER Fatih Baltacı "baltacifatih14@gmail.com"
+LABEL maintainer="baltacifatih14@gmail.com"
 
 RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
 

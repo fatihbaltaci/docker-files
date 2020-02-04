@@ -1,6 +1,6 @@
 FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime
 
-MAINTAINER Fatih Baltacı "baltacifatih14@gmail.com"
+LABEL maintainer="baltacifatih14@gmail.com"
 
 RUN apt-get update && apt-get install -y wget vim unzip libgtk2.0-dev swig tzdata && rm -rf /var/lib/apt/lists/*
 
