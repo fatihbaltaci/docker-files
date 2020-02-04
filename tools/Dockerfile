@@ -11,7 +11,8 @@ RUN apt-get update && \
                        net-tools \
                        ffmpeg \
                        netcat \
-                       telnet && \
+                       telnet \
+                       tzdata && \
     rm -rf /var/lib/apt/lists/*
 
 # change timezone

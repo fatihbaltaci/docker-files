@@ -2,7 +2,7 @@ FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
-RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake gdb gdbserver && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake gdb gdbserver tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt &&  \
     wget -O libtorch_1.3.1.zip https://download.pytorch.org/libtorch/cu101/libtorch-cxx11-abi-shared-with-deps-1.3.1.zip && \

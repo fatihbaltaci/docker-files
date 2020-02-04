@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
-RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt &&  \
     wget -O libtorch_1.3.1.zip https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.3.1%2Bcpu.zip && \
