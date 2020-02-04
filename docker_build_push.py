@@ -37,6 +37,7 @@ if __name__ == "__main__":
     DOCKERHUB_USERNAME = "fatihbaltaci"
 
     process_git = run_command(COMMAND_CHANGED_DOCKERFILES)
+    print(process_git)
     output = process_git.splitlines()
 
     for file_path in output:
