@@ -47,3 +47,4 @@ if __name__ == "__main__":
         
         print(COMMAND_BUILD_DOCKER_FILE)
         docker_build(COMMAND_BUILD_DOCKER_FILE)
+
