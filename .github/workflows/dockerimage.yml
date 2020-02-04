@@ -21,6 +21,8 @@ jobs:
           
       
       - uses: actions/setup-python@v1
-        with:
-          python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-      - run: ls && git --version && git diff-tree --no-commit-id --name-only -r 5b1705b68444794feb7cf41d531c85b5a6c5e027 && python --version && python docker_build_push.py
+      - name: Checkout submodules
+        shell: bash
+        run: |
+           changed_files="$(git diff-tree --no-commit-id --name-only -r 5b1705b68444794feb7cf41d531c85b5a6c5e027)
+           echo $changed_files
