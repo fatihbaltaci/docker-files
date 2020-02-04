@@ -20,9 +20,9 @@ jobs:
 #           echo ${{ steps.getfile.outputs.files }}
           
       
-      - uses: actions/setup-python@v1
+#       - uses: actions/setup-python@v1
       - name: Checkout submodules
         shell: bash
         run: |
            changed_files="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
-           echo $changed_files
+           echo "$changed_files"
