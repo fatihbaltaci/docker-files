@@ -16,12 +16,9 @@ def prepare_docker_build(file_path, hub_username):
 
 
 def run_command(command):
-    try:
-        process = subprocess.run(
+    process = subprocess.run(
             command, shell=True, capture_output=True, check=True, universal_newlines=True)
-        return process.stdout
-    except subprocess.CalledProcessError as error:
-        return f"Exception Occured: {str(error)}"
+    return process.stdout
 
 def docker_build(command):
     return_code = os.system(command)
@@ -31,13 +28,10 @@ def docker_build(command):
 
 if __name__ == "__main__":
     
-    print("Code Starting")
-
     COMMAND_CHANGED_DOCKERFILES = "git diff-tree --no-commit-id --name-only -r 5b1705b68444794feb7cf41d531c85b5a6c5e027"
     DOCKERHUB_USERNAME = "fatihbaltaci"
 
     process_git = run_command(COMMAND_CHANGED_DOCKERFILES)
-    print(process_git)
     output = process_git.splitlines()
 
     for file_path in output:
