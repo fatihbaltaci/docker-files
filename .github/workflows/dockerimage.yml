@@ -7,11 +7,18 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
+#     steps:
+#     - uses: actions/checkout@v1
 
-    - name: Build the Docker image
-      working-directory: ./jupyter_pytorch
-      run: docker build . --file Dockerfile --tag fatihbaltaci/jupyter
-    - name: Docker Push
-      run: docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} && docker push fatihbaltaci/jupyter
+#     - name: Build the Docker image
+#       working-directory: ./jupyter_pytorch
+#       run: docker build . --file Dockerfile --tag fatihbaltaci/jupyter
+#     - name: Docker Push
+#       run: docker login docker.io --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }} && docker push fatihbaltaci/jupyter
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+    - run: python docker_build_push.py
