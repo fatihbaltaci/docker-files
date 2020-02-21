@@ -15,25 +15,27 @@ def prepare_docker_build(file_path, hub_username):
 
 
 def run_command(command):
+    print(command)
     process = subprocess.run(
             command, shell=True, capture_output=True, check=True, universal_newlines=True)
     return process.stdout
 
-def docker_build(command):
+def docker_run_command(command):
+    print(command)
     return_code = os.system(command)
     if return_code != 0:
         print("There is a problem !!!")
 
 
 if __name__ == "__main__":
-    
-    COMMAND_CHANGED_DOCKERFILES = "git diff-tree --no-commit-id --name-only -r 5b1705b68444794feb7cf41d531c85b5a6c5e027"
     DOCKERHUB_USERNAME = "fatihbaltaci"
 
-    process_git = run_command(COMMAND_CHANGED_DOCKERFILES)
-    output = process_git.splitlines()
+    COMMAND_LAST_COMMIT_ID = "git rev-parse HEAD"
+    LAST_COMMIT_ID = run_command(COMMAND_LAST_COMMIT_ID)
+    COMMAND_CHANGED_FILES = f"git diff-tree --no-commit-id --name-only -r {LAST_COMMIT_ID}"
+    CHANGED_FILES = run_command(COMMAND_CHANGED_FILES).splitlines()
 
-    for file_path in output:
+    for file_path in CHANGED_FILES:
         if not "Dockerfile" in file_path:
             continue
         print("Changed Dockerfile: " + file_path)
@@ -42,8 +44,7 @@ if __name__ == "__main__":
 
         docker_file_path = Path(dockerfile_dir) / "Dockerfile"
 
-        COMMAND_BUILD_DOCKER_FILE = f"docker build --tag {image_tag} -f {docker_file_path} . "
-        
-        print(COMMAND_BUILD_DOCKER_FILE)
-        docker_build(COMMAND_BUILD_DOCKER_FILE)
-
+        COMMAND_BUILD_DOCKER_FILE = f"docker build --tag {image_tag} -f {docker_file_path} ."
+        docker_run_command(COMMAND_BUILD_DOCKER_FILE)
+        COMMAND_PUSH_DOCKER = f"docker push {image_tag}"
+        docker_run_command(COMMAND_PUSH_DOCKER)
