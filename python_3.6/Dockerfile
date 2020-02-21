@@ -2,6 +2,8 @@ FROM python:3.6
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN pip install urwid==2.0.1 opencv-contrib-python==4.1.0.25

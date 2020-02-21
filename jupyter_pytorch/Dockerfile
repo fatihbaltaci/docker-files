@@ -2,6 +2,8 @@ FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y wget vim unzip libgtk2.0-dev swig tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN pip --no-cache-dir install \

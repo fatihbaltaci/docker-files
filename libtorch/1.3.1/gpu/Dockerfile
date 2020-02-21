@@ -2,6 +2,8 @@ FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake gdb gdbserver tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt &&  \

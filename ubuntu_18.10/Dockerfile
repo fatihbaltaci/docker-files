@@ -2,6 +2,8 @@ FROM ubuntu:18.10
 
 LABEL maintainer="baltacifatih14@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
 
 # change timezone

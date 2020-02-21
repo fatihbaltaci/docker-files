@@ -3,6 +3,8 @@ FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 git tzdata && rm -rf /var/lib/apt/lists/*
 
