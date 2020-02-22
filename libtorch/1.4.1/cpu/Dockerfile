@@ -7,7 +7,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt &&  \
-    wget -O libtorch_1.4.0.zip https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.4.0%2Bcpu.zip && \
+    wget -q -O libtorch_1.4.0.zip https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.4.0%2Bcpu.zip && \
     unzip libtorch_1.4.0.zip && \
     rm libtorch_1.4.0.zip
 
