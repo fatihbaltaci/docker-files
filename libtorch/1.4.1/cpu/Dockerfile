@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y wget vim unzip zip curl cmake tzdata &&
 
 RUN cd /opt &&  \
     wget -q -O libtorch_1.4.0.zip https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-1.4.0%2Bcpu.zip && \
-    unzip libtorch_1.4.0.zip && \
+    unzip -q libtorch_1.4.0.zip && \
     rm libtorch_1.4.0.zip
 
 # change timezone
