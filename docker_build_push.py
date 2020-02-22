@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
         docker_file_path = Path(dockerfile_dir) / "Dockerfile"
 
-        COMMAND_BUILD_DOCKER_FILE = f"docker build --tag {image_tag} -f {docker_file_path} ."
+        COMMAND_BUILD_DOCKER_FILE = f"cd {dockerfile_dir} && docker build --tag {image_tag} ."
         docker_run_command(COMMAND_BUILD_DOCKER_FILE)
         COMMAND_PUSH_DOCKER = f"docker push {image_tag}"
         docker_run_command(COMMAND_PUSH_DOCKER)
