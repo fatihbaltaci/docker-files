@@ -11,6 +11,9 @@ RUN cd /opt &&  \
     unzip -q libtorch_1.3.1.zip && \
     rm libtorch_1.3.1.zip
 
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
 # change timezone
 RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
 
