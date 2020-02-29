@@ -15,3 +15,6 @@ ENV LANG=C.UTF-8
 
 # change timezone
 RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
+
+RUN usermod -a -G docker jenkins
+USER jenkins
