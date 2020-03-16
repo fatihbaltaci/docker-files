@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 USER root
 
-RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL https://get.docker.com/ | sh
 RUN usermod -a -G docker jenkins
