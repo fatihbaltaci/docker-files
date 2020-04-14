@@ -4,7 +4,7 @@ LABEL maintainer="baltacifatih14@gmail.com"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y git tzdata && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git tzdata vim && rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m pip install --user --upgrade setuptools wheel twine
 

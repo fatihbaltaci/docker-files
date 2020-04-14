@@ -24,8 +24,7 @@ def docker_run_command(command):
     print(command)
     return_code = os.system(command)
     if return_code != 0:
-        print("There is a problem !!!")
-
+        raise Exception("There is a problem !!!")
 
 if __name__ == "__main__":
     DOCKERHUB_USERNAME = "fatihbaltaci"
