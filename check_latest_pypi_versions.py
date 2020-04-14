@@ -2,24 +2,24 @@ import os
 import subprocess
 
 PACKAGES = """
-    opencv-contrib-python==4.1.0.25
-    mlflow==0.9.1 
-    youtube_dl 
+    opencv-contrib-python==4.2.0.34 
+    mlflow==1.7.2 
+    youtube_dl==2020.3.24 
     scikit-image==0.16.2 
-    matplotlib==3.1.0 
-    Pillow==5.3.0 
-    Cython==0.29.9 
+    matplotlib==3.2.1 
+    Pillow==7.1.1 
+    Cython==0.29.16 
     wget==3.2 
-    future==0.17.1 
-    jupyterlab==1.2.4 
-    ipywidgets 
-    tqdm 
-    pandas 
-    numpy 
-    scipy 
-    seaborn 
-    scikit-learn 
-    plotly
+    future==0.18.2 
+    jupyterlab==2.1.0 
+    ipywidgets==7.5.1 
+    tqdm==4.45.0 
+    pandas==1.0.3 
+    numpy==1.18.2 
+    scipy==1.4.1 
+    seaborn==0.10.0 
+    scikit-learn==0.22.2.post1 
+    plotly==4.6
 """
 
 
@@ -40,7 +40,7 @@ def get_version_from_single_line(line):
 
 
 def prepare_pip_install_command(packages_dict):
-    print_str = f"pip3 install --no-cache-dir install \\ \n"
+    print_str = f"pip3 --no-cache-dir install \\ \n"
 
     for package_name, version in packages_dict.items():
         print_str += f"\t{package_name}=={version} \\ \n"
