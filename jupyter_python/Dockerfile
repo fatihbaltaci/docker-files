@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir install \ 
+RUN pip3 --no-cache-dir install \ 
         opencv-contrib-python==4.2.0.34 \ 
         mlflow==1.7.2 \ 
         youtube_dl==2020.3.24 \ 
