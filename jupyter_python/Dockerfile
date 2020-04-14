@@ -29,7 +29,6 @@ RUN pip3 install --no-cache-dir install \
 COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 
 ENV PASSWORD="Jupyter"
-
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
