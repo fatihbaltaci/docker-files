@@ -26,6 +26,10 @@ RUN pip3 install --no-cache-dir install \
         scikit-learn==0.22.2.post1 \ 
         plotly==4.6.0
 
+COPY jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+
+ENV PASSWORD="Jupyter"
+
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
@@ -33,3 +37,5 @@ ENV LANG=C.UTF-8
 RUN ln -sf /usr/share/zoneinfo/Turkey /etc/localtime
 
 WORKDIR /workspace
+
+CMD [ "jupyter", "lab" ]
