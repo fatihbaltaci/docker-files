@@ -4,7 +4,7 @@ LABEL maintainer="baltacifatih14@gmail.com"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget vim unzip zip curl tzdata pandoc && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 --no-cache-dir install \ 
         opencv-contrib-python==4.2.0.34 \ 

@@ -6,7 +6,7 @@ ENV PATH /opt/conda/bin:$PATH
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 git tzdata && rm -rf /var/lib/apt/lists/*
+    libglib2.0-0 libxext6 libsm6 libxrender1 git tzdata pandoc && rm -rf /var/lib/apt/lists/*
 
 RUN wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
