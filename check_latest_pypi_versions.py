@@ -15,11 +15,6 @@ PACKAGES = """
     ipywidgets==7.5.1 
     tqdm==4.45.0 
     pandas==1.0.3 
-    numpy==1.18.2 
-    scipy==1.4.1 
-    seaborn==0.10.0 
-    scikit-learn==0.22.2.post1 
-    plotly==4.6
 """
 
 
