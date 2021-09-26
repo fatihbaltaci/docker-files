@@ -1,6 +1,6 @@
 
 ```bash
-docker run -it --rm --privileged -v $HOME/gifs:/home/node/gifs -v config:/home/node/.terminalizer fatihbaltaci/terminalizer bash
+docker run -it --rm --privileged -v $HOME/gifs:/home/node/gifs fatihbaltaci/terminalizer bash
 ```
 
 ```bash
